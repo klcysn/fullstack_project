@@ -1,0 +1,24 @@
+Project: Bookstore
+
+Epic:   - Landing Page
+        - user auth (login system)
+            Story:  - Register page
+                    - Login Page
+        - Dashboard/profile page
+            Story:  -Dashboard Page
+        - Book List
+            Story:
+        - Book details
+            Story:
+        - Cart
+            Story:
+        - Checkout System
+            Story:
+
+
+
+Tech MERN Stack:    - Be node.js server(RESTFUL API)
+                    - Databasse MongoDB
+                    - View React
+                    - Payment: Stripe
+                    - Production : Heroku Deploy
