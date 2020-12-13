@@ -6,7 +6,7 @@ connectDB() // to triger connection at start
 
 const app = express()
 
-app.use(express.json())
+app.use(express.json()) // to put data from client's body to inside reg.body
 
 app.use("/api", router)
 
