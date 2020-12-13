@@ -1,5 +1,5 @@
 {
-  "name": "mern-stack",
+  "name": "mern",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -8,19 +8,19 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon node server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/klcysn/mern-stack.git"
+    "url": "git+https://github.com/johnclarusway/mern-stack.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/klcysn/mern-stack/issues"
+    "url": "https://github.com/johnclarusway/mern-stack/issues"
   },
-  "homepage": "https://github.com/klcysn/mern-stack#readme",
+  "homepage": "https://github.com/johnclarusway/mern-stack#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",

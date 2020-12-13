@@ -1,13 +1,17 @@
-const express = require("express")
-const router = require("./routes/router")
-require("dotenv").config() //to use .env file
-const connectDB = require("./models/connectDB")
-connectDB() // to triger connection at start
+const express = require("express");
+const app = express();
 
-const app = express()
+require("dotenv").config();
 
-app.use(express.json()) // to put data from client's body to inside reg.body
+const connectDB = require("./models/connectDB");
+const router = require("./routes/router");
 
-app.use("/api", router)
+connectDB();
 
-app.listen(process.env.PORT, () => { console.log("I am listening") })
+app.use(express.json());
+app.use("/api", router);
+
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+  console.log(`I'm listening on port ${port}`);
+});
