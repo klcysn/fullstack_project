@@ -16,15 +16,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johnclarusway/mern-stack.git"
+    "url": "git+https://github.com/klcysn/fullstack_project.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/johnclarusway/mern-stack/issues"
+    "url": "https://github.com/klcysn/fullstack_project/issues"
   },
-  "homepage": "https://github.com/johnclarusway/mern-stack#readme",
+  "homepage": "https://github.com/klcysn/fullstack_project#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
