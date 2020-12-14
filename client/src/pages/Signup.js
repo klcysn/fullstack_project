@@ -18,8 +18,8 @@ const validateMessages = {
 const Signup = () => {
   let history = useHistory();
 
-  const onFinish = (values) => {
-    postData("/api/auth/register", values)
+  const onFinish = async (values) => {
+    await postData("/api/auth/register", values)
       .then((data, err) => {
         toast("Successfully registered");
         history.push("/");

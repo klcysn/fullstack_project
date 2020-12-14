@@ -17,8 +17,8 @@ const Signin = () => {
   let history = useHistory();
   const { setLoggedIn } = useContext(AuthContext);
 
-  const onFinish = (values) => {
-    postData("/api/auth/login", values)
+  const onFinish = async (values) => {
+    await postData("/api/auth/login", values)
       .then((data) => {
         localStorage.setItem("token", data.token);
         setLoggedIn(true);

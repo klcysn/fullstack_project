@@ -1,11 +1,12 @@
 import { useState, useContext } from "react";
-import { Layout, Menu } from "antd";
+import { Layout, Menu, Row, Col, Typography} from "antd";
 import { useHistory } from "react-router-dom";
 import { Badge } from "antd";
-import { ShoppingCartOutlined } from "@ant-design/icons";
+import { ShoppingCartOutlined, BookOutlined } from "@ant-design/icons";
 import { AuthContext } from "../../context/AuthContext";
 
 const { Header } = Layout;
+const { Title, Link } = Typography;
 
 const Navbar = () => {
   const { isLoggedIn, setLoggedIn } = useContext(AuthContext);
@@ -29,12 +30,22 @@ const Navbar = () => {
 
   return (
     <Header>
-      <img
+      {/* <img
         className="logo"
         src="https://clarusway.com/wp-content/uploads/2020/09/cw_son_editted.png"
         alt="logo"
         onClick={handleLogoClick}
-      />
+      /> */}
+      <Link href="/">
+        <Row>
+          <Col span={4}>
+            <BookOutlined style={{color: "white", fontSize: 50}} />
+          </Col>
+          <Col span={20}>
+            <Title level={2} style={{color: "white"}}>Yasin's Book Store</Title>
+          </Col>
+        </Row>
+      </Link>
       <Menu
         onClick={handleClick}
         theme="dark"

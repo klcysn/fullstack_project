@@ -8,12 +8,12 @@ exports.authRegister = async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
 
   // Field Validation
-  const validationErr = validationResult(req);
-  checkFunction(res, validationErr?.errors?.length > 0, validationErr.array());
+  const validationErr = await validationResult(req);
+  await checkFunction(res, validationErr?.errors?.length > 0, validationErr.array());
 
   // User exist check
   const userData = await User.findOne({ email });
-  checkFunction(res, userData, "User already exists!!");
+  await checkFunction(res, userData, "User already exists!!");
 
   // Password hash
   const salt = await bcrypt.genSalt(10);
@@ -36,16 +36,16 @@ exports.authLogin = async (req, res) => {
   const { email, password } = req.body;
 
   // Field Validation
-  const validationErr = validationResult(req);
-  checkFunction(res, validationErr?.errors?.length > 0, validationErr.array());
+  const validationErr = await validationResult(req);
+  await checkFunction(res, validationErr?.errors?.length > 0, validationErr.array());
 
   // User exist check
   const userData = await User.findOne({ email });
-  checkFunction(res, !userData, "User doesn't exists!!");
+  await checkFunction(res, !userData, "User doesn't exists!!");
 
   // Password compare
   const isPasswordMatch = await bcrypt.compare(password, userData.password);
-  checkFunction(res, !isPasswordMatch, "Invalid credentials");
+  await checkFunction(res, !isPasswordMatch, "Invalid credentials");
 
   // JSON WEB TOKEN - JWT
   jwt.sign(
