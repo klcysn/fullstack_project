@@ -13,10 +13,6 @@ const Navbar = () => {
   const [current, setCurrent] = useState("home");
   const history = useHistory();
 
-  const handleLogoClick = (e) => {
-    history.push(`/`);
-  };
-
   const handleLogout = () => {
     localStorage.removeItem("token");
     setLoggedIn(false);

@@ -44,7 +44,7 @@ exports.authLogin = async (req, res) => {
   await checkFunction(res, !userData, "User doesn't exists!!");
 
   // Password compare
-  const isPasswordMatch = await bcrypt.compare(password, userData.password);
+  const isPasswordMatch = bcrypt.compareSync(password, userData.password);
   await checkFunction(res, !isPasswordMatch, "Invalid credentials");
 
   // JSON WEB TOKEN - JWT
