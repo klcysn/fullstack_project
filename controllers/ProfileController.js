@@ -11,7 +11,6 @@ exports.getProfileInfo = async (req, res) => {
 };
 
 exports.updateProfileInfo = async (req, res) => {
-  //TODO: update profile fn.
   try {
     const editInfo = req.body;
     const user = await User.findByIdAndUpdate(req.user.userData._id, editInfo, {

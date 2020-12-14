@@ -5,7 +5,7 @@ var jwt = require("jsonwebtoken");
 const checkFunction = require('../helpers/checkFunction');
 
 exports.authRegister = async (req, res) => {
-  const { firstName, lastName, email, password } = req.body;
+  const { firstName, lastName, email, password } = await req.body;
 
   // Field Validation
   const validationErr = await validationResult(req);
@@ -17,7 +17,7 @@ exports.authRegister = async (req, res) => {
 
   // Password hash
   const salt = await bcrypt.genSalt(10);
-  const newPassword = await bcrypt.hash(password, salt);
+  const newPassword = bcrypt.hashSync(password, salt);
 
   // Save User
   const user = new User({
@@ -27,13 +27,11 @@ exports.authRegister = async (req, res) => {
     password: newPassword,
   });
   await user.save();
-
-  //TODO: Error handling for saving
   res.send("Register Completed.");
 };
 
 exports.authLogin = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password } = await req.body;
 
   // Field Validation
   const validationErr = await validationResult(req);
